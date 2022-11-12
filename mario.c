@@ -4,7 +4,7 @@
 int n;
 int y = 1;
 int x = 1;
-string say_bye = ("\nGood bye!\n");
+const string say_bye = ("\nGood bye!\n");
 
 void bye(void);
 void blocks(void);
@@ -22,18 +22,13 @@ int main(void)
         {
             x = get_int ("\n\nYou must type between 1 and 8. Do you want to try again? 1 for yes or 2 for no: \n");
             y = 0;
-            bye();
         }
-        if (x == 1)
+            if (x != 1)
         {
-            printf ("");
-        }
-        else if (x != 1)
-        {
-            bye();
             break;
         }
     }
+    bye();
 }
 
 
@@ -53,7 +48,7 @@ void blocks(void)
     int n_meter = n;
     for (int i = 0; i < n; i++)
     {
-        printf ("\n");
+        printf ("\n\n");
         int decrease = n_meter--;
         for (int b = decrease; b > 0; b--)
         {
@@ -64,6 +59,9 @@ void blocks(void)
             {
                 printf ("#");
             }
+            printf ("  ");
+            for(int e = 0; e < c; e++)
+            printf ("#");
     }
 }
 
